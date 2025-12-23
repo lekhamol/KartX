@@ -4,9 +4,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.ecommerce.entity.User;
-public class UserRepository extends JpaRepository<User, Long> {
+@Repository
+public interface UserRepository extends JpaRepository <User, Long> {
     public Optional<User> findByUsername(String username);
     public Optional<User> findByEmail(String email);
     public boolean existsByUsername(String username);
